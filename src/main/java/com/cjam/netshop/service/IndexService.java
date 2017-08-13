@@ -18,9 +18,9 @@ public class IndexService {
     @Autowired
     private ItemDAO itemDAO;
 
-    public List<Item> getItemListByIndex() throws BizException {
+    public List<Item> getItemListByIndex(Integer type) throws BizException {
 
-        List<Item> courseLogList = itemDAO.getItemList();
+        List<Item> courseLogList = itemDAO.getItemList(type);
 
         if (CollectionUtils.isEmpty(courseLogList)){
             throw new BizException("您最近没有要学习的课程");

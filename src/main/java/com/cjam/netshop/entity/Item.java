@@ -9,7 +9,7 @@ public class Item {
     private String imageUrl = null;
     private String desc;
     private String title;
-    private String link;
+    private Integer type;
 
     public long getItemId() {
         return itemId;
@@ -43,11 +43,11 @@ public class Item {
         this.title = title;
     }
 
-    public String getLink() {
-        return link;
+    public Integer getType() {
+        return type;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setType(Integer type) {
+        this.type = type;
     }
 }

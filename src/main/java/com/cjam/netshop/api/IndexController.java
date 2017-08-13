@@ -36,12 +36,14 @@ public class IndexController {
                         HttpServletResponse response) {
 
         String openid = request.getParameter("openid");
+        String type = request.getParameter("type") == null ? request.getParameter("type") : "0";
+
 
         JSONObject res = new JSONObject();
         res.put("code",0);
         try {
             logger.info("openid:{}",openid);
-            List<Item> itemList = indexService.getItemListByIndex();
+            List<Item> itemList = indexService.getItemListByIndex(Integer.valueOf(type));
             JSONArray jsonList = (JSONArray)JSON.toJSON(itemList);
             res.put("data",jsonList);
         } catch (BizException e) {
@@ -63,12 +65,13 @@ public class IndexController {
                         HttpServletResponse response) {
 
         String openid = request.getParameter("openid");
+        String type = request.getParameter("type") == null ? request.getParameter("type") : "0";
 
         JSONObject res = new JSONObject();
         res.put("code",0);
         try {
             logger.info("openid:{}",openid);
-            List<Item> itemList = indexService.getItemListByIndex();
+            List<Item> itemList = indexService.getItemListByIndex(Integer.valueOf(type));
             JSONArray jsonList = (JSONArray)JSON.toJSON(itemList);
             res.put("data",jsonList);
         } catch (BizException e) {
