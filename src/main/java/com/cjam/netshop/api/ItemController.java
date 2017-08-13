@@ -50,9 +50,15 @@ public class ItemController {
 
             itemObj.put("onePrice", "99.00");
             itemObj.put("truePrice", "267.00");
-            itemObj.put("specLst",new JSONObject(){{
-                put("value",123);
-                put("text","25g/ml （6片装）");
+            itemObj.put("specLst",new JSONArray(){{
+                add(new JSONObject(){{
+                    put("value",123);
+                    put("text","25g/ml （6片装）");
+                }});
+                add(new JSONObject(){{
+                    put("value",124);
+                    put("text","25g/ml （4片装）");
+                }});
             }});
             itemObj.put("infoImageUrls",new JSONArray(){{
                 add(infoImage);
