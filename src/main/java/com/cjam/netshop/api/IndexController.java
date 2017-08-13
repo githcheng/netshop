@@ -36,7 +36,7 @@ public class IndexController {
                         HttpServletResponse response) {
 
         String openid = request.getParameter("openid");
-        String type = request.getParameter("type") == null ? request.getParameter("type") : "0";
+        String type = request.getParameter("type") != null ? request.getParameter("type") : "0";
 
 
         JSONObject res = new JSONObject();
@@ -65,7 +65,7 @@ public class IndexController {
                         HttpServletResponse response) {
 
         String openid = request.getParameter("openid");
-        String type = request.getParameter("type") == null ? request.getParameter("type") : "0";
+        String type = request.getParameter("type") != null ? request.getParameter("type") : "0";
 
         JSONObject res = new JSONObject();
         res.put("code",0);
