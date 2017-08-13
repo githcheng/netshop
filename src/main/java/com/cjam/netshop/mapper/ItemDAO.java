@@ -16,5 +16,7 @@ public interface ItemDAO {
     @Select("select id as itemId, image_url as imageUrl, `desc`, title,type FROM item where type = #{type}")
     List<Item> getItemList(@Param("type")Integer type);
 
+    @Select("select id as itemId, image_url as imageUrl, `desc`, title,type FROM item where id = #{id}")
+    Item getItemById(@Param("id")Long id);
 }
 

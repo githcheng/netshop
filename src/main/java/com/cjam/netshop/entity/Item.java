@@ -1,5 +1,7 @@
 package com.cjam.netshop.entity;
 
+import java.util.List;
+
 /**
  * Created by jam on 2017/8/13.
  */
@@ -10,6 +12,12 @@ public class Item {
     private String desc;
     private String title;
     private Integer type;
+
+    private List<String> swiperImageUrl = null;
+    private List<String> infoImageUrl = null;
+
+    private Long onePrice = null;
+    private Long truePrice = null;
 
     public long getItemId() {
         return itemId;
