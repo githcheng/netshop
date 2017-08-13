@@ -42,7 +42,7 @@ public class IndexController {
         JSONObject res = new JSONObject();
         res.put("code",0);
         try {
-            logger.info("openid:{}",openid);
+            logger.info("type:{}",type);
             List<Item> itemList = indexService.getItemListByIndex(Integer.valueOf(type));
             JSONArray jsonList = (JSONArray)JSON.toJSON(itemList);
             res.put("data",jsonList);
@@ -70,7 +70,7 @@ public class IndexController {
         JSONObject res = new JSONObject();
         res.put("code",0);
         try {
-            logger.info("openid:{}",openid);
+            logger.info("type:{}",type);
             List<Item> itemList = indexService.getItemListByIndex(Integer.valueOf(type));
             JSONArray jsonList = (JSONArray)JSON.toJSON(itemList);
             res.put("data",jsonList);
