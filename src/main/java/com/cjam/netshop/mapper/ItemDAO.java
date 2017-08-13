@@ -12,7 +12,7 @@ import java.util.List;
 @Mapper
 public interface ItemDAO {
 
-    @Select("select id as itemId, image_url as imageUrl, `desc`, title FROM item")
+    @Select("select id as itemId, image_url as imageUrl, `desc`, title, link FROM item")
     List<Item> getItemList();
 
 }

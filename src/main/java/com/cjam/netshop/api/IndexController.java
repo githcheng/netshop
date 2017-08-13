@@ -32,7 +32,34 @@ public class IndexController {
 
     @RequestMapping(value="/getIndexList",method={RequestMethod.GET, RequestMethod.POST})
     public @ResponseBody
-    JSONObject feedback(HttpServletRequest request,
+    JSONObject getIndexList(HttpServletRequest request,
+                        HttpServletResponse response) {
+
+        String openid = request.getParameter("openid");
+
+        JSONObject res = new JSONObject();
+        res.put("code",0);
+        try {
+            logger.info("openid:{}",openid);
+            List<Item> itemList = indexService.getItemListByIndex();
+            JSONArray jsonList = (JSONArray)JSON.toJSON(itemList);
+            res.put("data",jsonList);
+        } catch (BizException e) {
+            logger.error(e.getMessage(),e);
+            res.put("code",1);
+            res.put("msg", e.getMessage());
+        } catch (Exception e) {
+            logger.error(e.getMessage(),e);
+            res.put("code",1);
+            res.put("msg", "服务异常");
+        } finally {
+            return res;
+        }
+    }
+
+    @RequestMapping(value="/getIndexTopList",method={RequestMethod.GET, RequestMethod.POST})
+    public @ResponseBody
+    JSONObject getIndexTopList(HttpServletRequest request,
                         HttpServletResponse response) {
 
         String openid = request.getParameter("openid");
