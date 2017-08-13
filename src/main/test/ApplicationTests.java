@@ -1,6 +1,4 @@
 import com.alibaba.fastjson.JSON;
-import com.cjam.springboot.appEntity.CourseLog;
-import com.cjam.springboot.mapper.CourseLogDAO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +6,9 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.cjam.springboot.Application;
-import com.cjam.springboot.appEntity.User;
-import com.cjam.springboot.mapper.UserDAO;
+import com.cjam.netshop.Application;
+import com.cjam.netshop.entity.User;
+import com.cjam.netshop.mapper.UserDAO;
 
 /**
  * Created by jam on 2017/2/8.
@@ -21,11 +19,7 @@ import com.cjam.springboot.mapper.UserDAO;
 public class ApplicationTests {
 
     @Autowired
-    private UserDAO userMapper;
-
-    @Autowired
-    private CourseLogDAO courseLogDAO;
-
+    private ItemDAO itemDAO;
 
     @Test
     @Rollback

@@ -110,7 +110,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.4.2.RELEASE</version>
                 <configuration>
-                    <mainClass>com.cjam.springboot.Application</mainClass>
+                    <mainClass>com.cjam.netshop.Application</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>
